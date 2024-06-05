@@ -1,7 +1,10 @@
 const express=require('express');
+const cors=require('cors')
 const app=express()
 
-app.get('/test',(req,res)=>{
+app.use(cors());
+
+app.get('/register',(req,res)=>{
     res.json("server is running...");
 })
 
