@@ -3,9 +3,12 @@ const cors=require('cors')
 const app=express()
 
 app.use(cors());
+app.use(express.json())
 
-app.get('/register',(req,res)=>{
-    res.json("server is running...");
+app.post('/register',(req,res)=>{
+
+    const {fullname,email,password}=req.body
+    res.json({requestData:{fullname,email,password}});
 })
 
 
